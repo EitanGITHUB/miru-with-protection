@@ -8,6 +8,7 @@
   "homepage": "https://github.com/ThaUnknown/miru#readme",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack build && concurrently --kill-others \"npm run web:watch\" \"npm run electron:start\"",
+    "start-prod": "cross-env NODE_ENV=production webpack build && concurrently --kill-others \"npm run web:watch\" \"npm run electron:start\"",
     "web:watch": "webpack serve",
     "web:build": "cross-env NODE_ENV=production webpack build",
     "electron:start": "electron ./build/main.js",

@@ -64,6 +64,8 @@ export default class TorrentClient extends WebTorrent {
       torrentPort: settings.torrentPort || 0,
       dhtPort: settings.dhtPort || 0,
       natUpnp: SUPPORTS.permamentNAT ? 'permanent' : true
+      seedOutgoingConnections: false,
+      webSeeds: false
     })
     this.ipc = ipc
     this.torrentPath = torrentPath
@@ -317,6 +319,11 @@ export default class TorrentClient extends WebTorrent {
 
     torrent.once('done', () => {
       if (this.settings.torrentPathNew) localStorage.setItem('lastFinished', 'true')
+      if(torrent.ready){
+        torrent.pause()
+        console.log("amogus")
+        this.dispatchError('nigga balls')
+      }
     })
   }
 
