@@ -322,6 +322,7 @@ export default class TorrentClient extends WebTorrent {
       if(torrent.ready){
         torrent.pause()
         console.log("amogus")
+        console.log("yes")
         this.dispatchError('nigga balls')
       }
     })
